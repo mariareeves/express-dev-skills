@@ -6,16 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Express Books</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
     <h1>Books</h1>
     <ul>
-        <% Books.forEach(function(b) { %>
+        <% books.forEach(function(b) { %>
             <li>
-                <%= b.todo %>
-                    -
-                    <%= b.read ? 'read' : 'not read yet' %>
+                <a href="/books/<%= b.id %>">
+                    <%= b.book %>
+                </a>
+
+                -
+                <%= b.read ? 'read' : 'not read yet' %>
             </li>
             <% }); %>
     </ul>
