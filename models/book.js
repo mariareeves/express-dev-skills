@@ -15,6 +15,7 @@ const books = [
 module.exports = {
     getAll,
     getOne,
+    create,
 };
 
 function getAll() {
@@ -25,4 +26,11 @@ function getOne(id) {
     id = parseInt(id);
     // find method to find the first obj that matched the id
     return books.find(book => book.id === id);
+}
+
+function create(book) {
+    book.id = Date.now() % 1000000
+    // starting out at false bc new books havent been read yet
+    book.read = false;
+    books.push(book)
 }

@@ -7,6 +7,7 @@ module.exports = {
     index,
     show,
     new: newBook,
+    create,
 };
 
 function index(req, res) {
@@ -27,4 +28,11 @@ function newBook(req, res) {
     res.render('books/new', {
         title: 'New Book'
     });
+}
+
+function create(req, res) {
+    console.log(req.body);
+    Book.create(req.body);
+    // redirect is used anytime data is changed
+    res.redirect('./books');
 }
