@@ -10,12 +10,14 @@ module.exports = {
 
 function index(req, res) {
     res.render('books/index', {
-        books: Book.getAll()
+        books: Book.getAll(),
+        title: 'All Books',
     });
 }
 
 function show(req, res) {
     res.render('books/show', {
         book: Book.getOne(req.params.id),
-    })
+        title: 'Book Details',
+    });
 }
