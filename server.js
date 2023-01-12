@@ -14,12 +14,20 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(function (req, res, next) {
+  res.locals.time = new Date().toLocaleTimeString();
+  next();
+})
+
+// middleware
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// router 
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
 

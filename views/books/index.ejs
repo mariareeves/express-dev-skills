@@ -1,5 +1,9 @@
 <%- include('../partials/header') %>
+    <h3>Books as of <%= time %>
+    </h3>
+
     <ul>
+
         <% books.forEach(function(b) { %>
             <li>
                 <a href="/books/<%= b.id %>">
@@ -11,5 +15,6 @@
             </li>
             <% }); %>
     </ul>
+    <a href="/books/new">Add a new book</a>
 
     <%- include('../partials/footer') %>

@@ -6,6 +6,7 @@ const Book = require('../models/book')
 module.exports = {
     index,
     show,
+    new: newBook,
 };
 
 function index(req, res) {
@@ -19,5 +20,11 @@ function show(req, res) {
     res.render('books/show', {
         book: Book.getOne(req.params.id),
         title: 'Book Details',
+    });
+}
+
+function newBook(req, res) {
+    res.render('books/new', {
+        title: 'New Book'
     });
 }
