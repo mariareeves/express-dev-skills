@@ -29,7 +29,8 @@ function getOne(id) {
 }
 
 function create(book) {
-    book.id = Date.now() % 1000000
+    // adding a new id
+    book.id = Date.now() % 1000000;
     // starting out at false bc new books havent been read yet
     book.read = false;
     books.push(book)

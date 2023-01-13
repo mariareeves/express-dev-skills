@@ -14,7 +14,7 @@ router.get('/new', booksCtrl.new)
 // Get /books/:id
 router.get('/:id', booksCtrl.show);
 // Post /books
-router.post('./', booksCtrl.create);
+router.post('/', booksCtrl.create);
 
 
 module.exports = router;
