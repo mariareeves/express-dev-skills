@@ -8,6 +8,7 @@ module.exports = {
     show,
     new: newBook,
     create,
+    delete: deleteBook,
 };
 
 function index(req, res) {
@@ -34,5 +35,10 @@ function create(req, res) {
     console.log(req.body);
     Book.create(req.body);
     // redirect is used anytime data is changed
+    res.redirect('/books');
+}
+
+function deleteBook(req, res) {
+    Book.deleteOne(req.params.id);
     res.redirect('/books');
 }

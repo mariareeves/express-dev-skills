@@ -4,4 +4,8 @@
     </h3>
     <h3>Have you read this book? <%= book.read ? 'Yes' : 'No' %>
     </h3>
+    <form action="/books/<%= book.id %>?_method=DELETE" class="delete-form" method="POST">
+        <button type="submit">X</button>
+    </form>
+
     <%- include('../partials/footer') %>

@@ -15,6 +15,7 @@ router.get('/new', booksCtrl.new)
 router.get('/:id', booksCtrl.show);
 // Post /books
 router.post('/', booksCtrl.create);
-
+//  DELETE /book
+router.delete('/:id', booksCtrl.delete);
 
 module.exports = router;

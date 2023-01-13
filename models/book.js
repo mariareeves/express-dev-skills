@@ -16,6 +16,7 @@ module.exports = {
     getAll,
     getOne,
     create,
+    deleteOne,
 };
 
 function getAll() {
@@ -34,4 +35,10 @@ function create(book) {
     // starting out at false bc new books havent been read yet
     book.read = false;
     books.push(book)
+}
+
+function deleteOne(id) {
+    id = parseInt(id);
+    const idx = books.findIndex(book => book.id === id);
+    books.splice(idx, 1);
 }
